@@ -49,6 +49,8 @@
                             {{-- score button --}}
                             <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Score Form</button></a>
                             {{--player button --}}
+                            <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Score Form</button></a>
+                            {{--player button --}}
                             <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Game's Players</button></a>
                             {{-- edit button --}}
                             <form action="/admin/ffb/games/edit/" method="GET">
