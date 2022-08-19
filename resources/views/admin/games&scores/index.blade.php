@@ -19,13 +19,12 @@
         </div>
     @endif
         <div class="m-2">
-        <a href="" class=" p-2 bg-green-600 hover:bg-green-500 rounded-lg text-white shadow-lg">+ Add New Games</a>
+        <a href="{{route("games-add")}}" class=" p-2 bg-green-600 hover:bg-green-500 rounded-lg text-white shadow-lg">+ Add New Games</a>
     </div>
     <div class="m-2">
         <table class="border-collapse border border-green-900 w-full">
             <thead>
                 <tr class="bg-gray-200 p-3 font-bold">
-                    <td width="5%" class="border border-blue-900 p-3 display-none">Date of Match</td>
                     <td width="35%" class="border border-blue-900 p-3">Game Name</td>
                     {{-- <td width="60" class="border border-blue-900 p-3">Action</td> --}}
                 </tr>
@@ -40,14 +39,13 @@
 
   
                     <tr class="h-30 border border-black hover:bg-cyan-50 text-center min-h-full">
-                        <td class="border border-gray-300 p-3 px-5 display-none">{{$games_list->games_date}}</td>
-                        <td class="border border-gray-300 p-3 px-5">{{$games_list->games_name}}
+                        <td class="border border-gray-300 p-3 px-5">{{$games_list->games_date}} - {{$games_list->games_name}}
                         {{-- </td>
                         <td class="border border-gray-300 p-3 px-5 "> --}}
                             <br>
                             <div class="inline-flex">
                             {{-- score button --}}
-                            <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Score Form</button></a>
+                            <a href=""><button class="border border-gray-400 hover:bg-gray-100 rounded-lg p-2 m-1">Score Form</button></a>
                             {{--player button --}}
                             <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Score Form</button></a>
                             {{--player button --}}

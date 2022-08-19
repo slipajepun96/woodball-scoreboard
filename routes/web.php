@@ -22,5 +22,6 @@ Route::middleware(['auth'],['preventBackHistory'])->group(function()
 {
     //games and scores
     Route::get('/admin/games',[GameController::class,'index'])->name('games-index');
+    Route::get('/admin/games/add',[GameController::class,'store'])->name('games-add');
 
 });

@@ -11,4 +11,9 @@ class GameController extends Controller
         $games_lists=Game::all();
         return view('admin.games&scores.index',['games_lists'=>$games_lists]);
     }
+
+    public function store()
+    {
+        return view('admin.games&scores.add');
+    }
 }
