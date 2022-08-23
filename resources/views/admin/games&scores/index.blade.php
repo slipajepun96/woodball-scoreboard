@@ -13,11 +13,17 @@
     <span class="text-2xl font-bold m-2 my-3">Games Setting</span>
     <br>
     @if(session('status'))
-        <div class="bg-yellow-400 text-black p-2 rounded m-3" id="status_message">
+        <div class="bg-green-400 text-black p-2 rounded m-3" id="status_message">
             <div class="flex-row">{{session('status')}}
               </div>
         </div>
     @endif
+    @if(session('delete'))
+    <div class="bg-red-200 text-black p-2 rounded m-3" id="status_message">
+        <div class="flex-row">{{session('delete')}}
+          </div>
+    </div>
+    @endif  
         <div class="m-2">
         <a href="{{route("games-add")}}" class=" p-2 bg-green-600 hover:bg-green-500 rounded-lg text-white shadow-lg">+ Add New Games</a>
     </div>
@@ -51,14 +57,14 @@
                             {{--player button --}}
                             <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Game's Players</button></a>
                             {{-- edit button --}}
-                            <form action="/admin/ffb/games/edit/" method="GET">
+                            <form action="/admin/games/edit/{{$games_list->id}}" method="GET">
                                 @csrf 
                                 <button type="submit" class="bg-yellow-500 hover:bg-yellow-400 rounded-lg p-2 m-1">
                                     Edit Game
                                 </button>
                             </form>
                             {{-- delete button --}}
-                            <form action="/admin/ffb/games/delete/" method="POST" onsubmit="return confirm('Are you sure to delete games ?')">
+                            <form action="/admin/games/delete/{{$games_list->id}}" method="POST" onsubmit="return confirm('Are you sure to delete games ?')">
                                 @csrf 
                                 <button type="submit" class="bg-red-500 hover:bg-red-400 rounded-lg p-2 m-1">
                                     Delete

@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->date('games_date');
             $table->string('games_name',200);
-            $table->boolean('is_group');
-            $table->boolean('separate_by_sex');
+            $table->boolean('is_group')->nullable();
+            $table->boolean('separate_by_sex')->nullable();
         });
     }
 
