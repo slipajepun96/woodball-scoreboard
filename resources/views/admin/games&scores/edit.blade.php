@@ -35,10 +35,10 @@
 </script> 
 
 <div class="bg-white m-2 p-2 text-black rounded-xl">
-    <span class="text-2xl font-bold m-3">Add New Game</span>
+    <span class="text-2xl font-bold m-3">Edit Game</span>
     <br>
     <div class="m-2">
-        <form action="{{route('games-update')}}" method="POST">
+        <form action="{{route('games-update',$games_detail->id)}}" method="POST">
             @csrf 
             <div class="mb-4  inline-block w-full  m-3"> 
                 <label for="game_name" class="block text-gray-700 text-sm font-bold mb-2">Game Name : </label>

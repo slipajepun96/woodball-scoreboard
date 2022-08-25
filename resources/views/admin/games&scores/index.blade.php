@@ -55,7 +55,12 @@
                             {{--player button --}}
                             <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Score Form</button></a>
                             {{--player button --}}
-                            <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Game's Players</button></a>
+                            <form action="/admin/games/view/{{$games_list->id}}" method="GET">
+                                @csrf 
+                                <button type="submit" class="bg-yellow-500 hover:bg-yellow-400 rounded-lg p-2 m-1">
+                                    Game Summary
+                                </button>
+                            </form>
                             {{-- edit button --}}
                             <form action="/admin/games/edit/{{$games_list->id}}" method="GET">
                                 @csrf 

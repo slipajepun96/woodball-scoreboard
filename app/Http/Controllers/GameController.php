@@ -19,6 +19,12 @@ class GameController extends Controller
         return view('admin.games&scores.add');
     }
 
+    public function view($id)
+    {
+        $games_detail=Game::findOrFail($id);
+        return view('admin.games&scores.view',['games_detail'=>$games_detail]);
+    }
+
     public function store(Request $request)
     {
         // dd($request);
@@ -51,7 +57,7 @@ class GameController extends Controller
         return view('admin.games&scores.edit',['games_detail'=>$games_detail]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
         // dd($request);
         $this->validate($request,[
@@ -60,7 +66,7 @@ class GameController extends Controller
         ]);
 
 
-        $game=new Game();
+        $game=Game::findOrFail($id);
         $game->games_date=$request->games_date;
         $game->games_name=$request->games_name;
         if($request->is_group==TRUE)
@@ -73,7 +79,7 @@ class GameController extends Controller
             $game->separate_by_sex=0;
         
         $game->save();
-        Session::flash('status','New game successfully added');
+        Session::flash('status','Game details successfully updated');
         return redirect('/admin/games/');
     }
 
