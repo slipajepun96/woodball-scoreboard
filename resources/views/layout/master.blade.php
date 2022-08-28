@@ -90,7 +90,7 @@
                     @if(!Auth::guest())
 
                     <a href="{{route("games-index")}}" class="lg:inline-flex lg:w-auto px-3 py-2 rounded hover:bg-gray-200 hover:text-cyan-600"><span>Games & Scores</span></a>
-                    <a href="#" class="lg:inline-flex lg:w-auto px-3 py-2 rounded hover:bg-gray-200 hover:text-cyan-600"><span>Players</span></a>
+                    <a href="{{route("players-index")}}" class="lg:inline-flex lg:w-auto px-3 py-2 rounded hover:bg-gray-200 hover:text-cyan-600"><span>Players</span></a>
                     <a href="" class="lg:inline-flex lg:w-auto px-3 py-2 rounded hover:bg-gray-200 hover:text-cyan-600"><span>Admin Main</span></a>
                     <form action="{{route('logout')}}" method="POST"> @csrf <button type="submit" class="lg:inline-flex lg:w-auto px-3 py-2 rounded hover:bg-red-600 hover:text-white">Logout</button></form>
                    @else

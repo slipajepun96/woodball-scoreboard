@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\PlayerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,11 @@ Route::middleware(['auth'],['preventBackHistory'])->group(function()
     Route::get('/admin/games/add',[GameController::class,'add'])->name('games-add');
     Route::get('/admin/games/edit/{id}',[GameController::class,'edit'])->name('games-edit');
     Route::get('/admin/games/view/{id}',[GameController::class,'view'])->name('games-view');
+
+    //players
+    Route::post('/admin/players/add',[PlayerController::class,'store'])->name('players-store');
+    Route::post('/admin/players/delete/{id}',[PlayerController::class,'delete']);
+    Route::get('/admin/players',[PlayerController::class,'index'])->name('players-index');
+    Route::get('/admin/players/add',[PlayerController::class,'add'])->name('players-add');
 
 });
