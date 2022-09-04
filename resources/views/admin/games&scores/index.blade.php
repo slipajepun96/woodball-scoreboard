@@ -51,9 +51,19 @@
                             <br>
                             <div class="inline-flex">
                             {{-- score button --}}
-                            <a href=""><button class="border border-gray-400 hover:bg-gray-100 rounded-lg p-2 m-1">Score Form</button></a>
+                            <form action="/admin/games/{{$games_list->id}}/scorecard" method="GET">
+                                @csrf 
+                                <button type="submit" class="bg-cyan-500 hover:bg-cyan-400 rounded-lg p-2 m-1">
+                                    Scorecard
+                                </button>
+                            </form>
                             {{--player button --}}
-                            <a href=""><button class="bg-green-500 hover:bg-green-400 rounded-lg p-2 m-1">Score Form</button></a>
+                            <form action="/admin/games/players/{{$games_list->id}}" method="GET">
+                                @csrf 
+                                <button type="submit" class="bg-yellow-500 hover:bg-yellow-400 rounded-lg p-2 m-1">
+                                    Add/Remove Player
+                                </button>
+                            </form>
                             {{--player button --}}
                             <form action="/admin/games/view/{{$games_list->id}}" method="GET">
                                 @csrf 
@@ -83,6 +93,7 @@
 
             </tbody>
         </table>
+
     </div>
 </div>
 

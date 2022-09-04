@@ -12,15 +12,19 @@
 
 <div class="bg-white m-2 p-2 text-black rounded-xl">
     <span class="text-3xl font-bold m-3">{{$games_detail->games_name}}</span><br><hr>
-    <span class="text-lg text-gray-700 m-3">Game Summary</span>
+    <span class="text-xl text-gray-700 m-3">Game Summary</span>
     <br>
     <div class="">
         <span class="text-md m-3">Date : {{$games_detail->games_date}}</span>
         <span class="text-md m-3">Course : Laman Woodball Mini, Ladang PKPP Paloh Hinai</span>
     </div>
-    <br><br>
-    <hr>
-    <span class="text-lg text-gray-700 m-3">Players Summary</span>
+    <br>
+    <span class="text-xl text-gray-700 m-3">Players List</span><br>
+    <?php $i=1 ?>
+    @foreach($gameplayers_list as $gameplayer_list)
+        <span class="text-md text-black m-3">{{$i}}.&nbsp;{{$gameplayer_list->player->name}} - {{$gameplayer_list->player->organisation}} </span>
+        <br><?php $i+=1;?>
+    @endforeach
 
 </div>
 

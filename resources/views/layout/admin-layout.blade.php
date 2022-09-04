@@ -12,7 +12,7 @@
 
 
 
-<nav class="flex items-center p-3 flex-wrap bg-cyan-900 shadow">
+{{-- <nav class="flex items-center p-3 flex-wrap bg-cyan-900 shadow">
     <a href="/" class="p-2 mr-4 inline-flex items-center text-white">
         <span class="text-xl font-bold tracking-wide">Administrator Dashboard</span>
     </a>
@@ -28,7 +28,7 @@
             <a href="#" class="lg:inline-flex lg:w-auto px-3 py-2 rounded text-white hover:bg-cyan-400 hover:text-black"><span>Administrators Setting</span></a>
         </div>
     </div>
-</nav>
+</nav> --}}
 
 @yield('admin-content')
 

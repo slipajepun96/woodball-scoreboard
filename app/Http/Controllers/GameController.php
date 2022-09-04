@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Game;
+use App\Models\GamePlayer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
@@ -22,7 +23,8 @@ class GameController extends Controller
     public function view($id)
     {
         $games_detail=Game::findOrFail($id);
-        return view('admin.games&scores.view',['games_detail'=>$games_detail]);
+        $gameplayers_list=GamePlayer::all()->where('game_id',$id);
+        return view('admin.games&scores.view',['games_detail'=>$games_detail,'gameplayers_list'=>$gameplayers_list]);
     }
 
     public function store(Request $request)
